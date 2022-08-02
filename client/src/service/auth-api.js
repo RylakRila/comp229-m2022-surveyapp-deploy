@@ -1,5 +1,5 @@
 import axios from 'axios';
-const URL = 'http://localhost:8080';
+const URL = 'http://localhost:' + process.env.PORT;
 
 export const userRegister = async(inputs)=>{
     try{
