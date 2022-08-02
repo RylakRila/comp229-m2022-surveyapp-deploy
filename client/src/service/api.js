@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'https://comp229-m2022-survey-app.herokuapp.com/';
+const URL = 'https://comp229-m2022-survey-app.herokuapp.com';
 
 
 export const getUser = async()=>{
