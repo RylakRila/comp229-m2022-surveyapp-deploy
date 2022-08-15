@@ -1,5 +1,5 @@
 .mainContainer{
-
+    
     text-align: center;
 }
 .top{
@@ -13,19 +13,30 @@
 }
 .buttons >Button{
   color: black;
-  width: 400px;
+  width: 30%;
+  
 }
 
-.cardConainer 
+#cardContainer 
  {
-
-    display: flex;
-    justify-content : space-around;
-    margin-bottom: 50px;
-    margin-top: 10px;
-
+    width:80%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-left:auto;
+    margin-right:auto;
 
 }
 .buttonleft{
     background-color: #efdc75;
 }
+
+
+
+
+
+
+
+
+
+
+

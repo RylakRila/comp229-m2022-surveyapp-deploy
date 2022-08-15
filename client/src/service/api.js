@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'https://comp229-m2022-survey-app.herokuapp.com';
+const URL = 'http://localhost:8080';
 
 
 export const getUser = async()=>{
@@ -159,5 +159,14 @@ export const addResponses = async (sresponse, id)=>{
         return await axios.post(`${URL}/addresponses/${id}`, sresponse);
     }catch(error){
         console.log(`Error while calling addResponses api`, error);
+    }
+}
+
+//response
+export const getResponseCount = async(id)=>{
+    try{
+        return await axios.get(`${URL}/responsereport/${id}`);
+    }catch(error){
+        console.log(`Error while calling getThisUser api`, error);
     }
 }

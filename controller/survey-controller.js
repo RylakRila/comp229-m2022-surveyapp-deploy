@@ -90,7 +90,7 @@ export const addSurvey = async(request, response)=>{
 
   export const getViewSurvey = async(request, response)=>{
     try{
-     const surveys= await Survey.find({isActive:"on"}).populate("userId");
+     const surveys= await Survey.find({}).populate("userId");
      response.status(200).json(surveys);
     }catch(error){
       response.status(404).json({message: error.message});

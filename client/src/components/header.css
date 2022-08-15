@@ -1,4 +1,12 @@
 #navbar{
-    background-color: #015684 !important;
+    background-color: #3d677d  !important;
      
 }
+#user{
+    margin-left:1em;
+    margin-top:0.5em;
+    color:darkgrey;
+}
+#logo{
+    margin-left:5%;
+    }

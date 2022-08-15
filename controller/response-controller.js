@@ -5,7 +5,7 @@ import Response from '../schema/response-schema.js';
 
 export const addResponses = async(request, response)=>{
     const sresponse = request.body;
-    console.log(sresponse);
+    //console.log(sresponse);
     
     let surveyID = request.params.id;
     let questions = await Question.find({surveyId:surveyID});
@@ -22,16 +22,25 @@ export const addResponses = async(request, response)=>{
     console.log(x, sresponse[x]);
     let questionId = x;
     let responseValue = sresponse[x];
-    let selectedOptionId = await Option.findOne({ questionId: questionId, optionValue: responseValue})._id;
+    let selectedOption = await Option.findOne({ questionId: questionId, optionValue: responseValue});
+     
     let newResponse = new Response({
         surveyId: surveyID,
         questionId: questionId,
-        optionId: selectedOptionId,
+        optionId: selectedOption._id,
         responseValue:responseValue
       })
-  
+    
       await newResponse.save();
+     console.log(newResponse.optionId);
+      const option= await Option.findById(selectedOption._id).findOneAndUpdate(
+         { _id: selectedOption._id},
+         { $push: { responseIds: newResponse.id} },
+        
+      );
    }
    
     
   } 
+
+ 

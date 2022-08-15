@@ -15,6 +15,13 @@ const OptionSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: "Survey",
           },
+          responseIds: [
+            {
+              type: Schema.Types.ObjectId,
+              ref: "Response",
+            },
+        
+          ]
        
       },
       {

@@ -1,0 +1,9 @@
+ul li{
+    list-style-type:none; 
+}
+
+#rc{
+    font-size:0.8em;
+    margin-left:1em;
+    color:red;
+}

@@ -38,25 +38,25 @@ const DisplayQuestion = ()=>{
       <>
         {
                     questions.map((question, index)=>
-                        <Card key={index}>                          
-                                <Card.Body >{question.statement}</Card.Body>
+                        <Card key={index} bg="light">                          
+                                <Card.Header >{question.statement}</Card.Header>
                                  <div>
                                     {
                                     question.optionIds.map((option, index)=>
-                                    <ul key={index}>
-                                        <li>
-                                        <input type="radio" name={option.questionId} value={option.optionValue}/>
+                                    <div key={index}>
+                                        <div style={{marginLeft:20}}>
+                                        <input style={{margin:'1em'}} type="radio" name={option.questionId} value={option.optionValue}/>
                                             {option.optionValue}
-                                            </li>
+                                            </div>
 
-                                    </ul>)
+                                    </div>)
 
                                     }
                                  </div>
                                 
                                 <div>
-                                <Button variant = "primary"  onClick={()=>addOptionDetails(question._id)}>Add Option</Button>
-                                <Button variant = "primary" onClick = {()=>deleteQuestionDetails(question._id)}>Delete</Button>
+                                <Button variant = "outline-success" size="sm"  onClick={()=>addOptionDetails(question._id)}>Add Option</Button>
+                                <Button variant = "outline-warning" size="sm" onClick = {()=>deleteQuestionDetails(question._id)}>Delete</Button>
 
 
                                 </div>
