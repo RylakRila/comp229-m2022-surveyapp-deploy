@@ -1,5 +1,5 @@
 import axios from 'axios';
-const URL = 'http://localhost:8080';
+const URL = 'https://comp229-m2022-survey-app.herokuapp.com';
 
 export const userRegister = async(inputs)=>{
     try{
