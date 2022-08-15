@@ -44,8 +44,8 @@ app.use(authConfig.passport.initialize());
 app.use(authConfig.passport.session());
 
 //routes
-app.use('/', authRoutes);
-app.use('/', surveyRoutes);
+app.use('/api', authRoutes);
+app.use('/api', surveyRoutes);
 
 //port
 const port = process.env.PORT || 8080;
