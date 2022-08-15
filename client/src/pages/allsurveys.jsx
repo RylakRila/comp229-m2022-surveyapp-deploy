@@ -45,9 +45,7 @@ const AllSurveys = ()=>{
          <AddButton variant="contained" color="success" href="./addsurvey" >
             Add Survey
         </AddButton>
-        <StyledTable>
-        <div  className="table-responsive">
-         <table className="table table-striped table-bordered table-hover ">
+        <StyledTable className="table-responsive table table-striped table-bordered table-hover">
           <thead className="table-success">
               <tr className="text-center">
               
@@ -87,8 +85,6 @@ const AllSurveys = ()=>{
              
             
               </tbody>
-   </table>
-        </div>
         </StyledTable>
         
         
