@@ -48,16 +48,16 @@ function App() {
             <Edituser />
         </Route>
         <Route path='/allsurvey'>
-            <AllSurveys />
+            {(!authToken) ? <Redirect to='/adduser'/> : <AllSurveys/>}
         </Route>
         <Route path='/addsurvey'>
-            <AddSurvey />
+            {(!authToken) ? <Redirect to='/adduser'/> : <AddSurvey/>}
         </Route>
         <Route path='/editsurvey/:id'>
-            <EditSurvey />
+            {(!authToken) ? <Redirect to='/adduser'/> : <EditSurvey />}
         </Route> 
         <Route path='/editquestion/:id'>
-            <EditQuestion />
+            {(!authToken) ? <Redirect to='/adduser'/> : <EditQuestion />}
         </Route> 
 
         <Route path='/logout'>
@@ -69,11 +69,11 @@ function App() {
         </Route>
          
         <Route path='/report/:id'>
-            <Report />
+            {(!authToken) ? <Redirect to='/adduser'/> : <Report />}
         </Route>
 
         <Route path='/chartreport/:id'>
-            <ChartReport />
+            {(!authToken) ? <Redirect to='/adduser'/> : <ChartReport />}
         </Route>
 
 
