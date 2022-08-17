@@ -61,7 +61,7 @@ function App() {
         </Route> 
 
         <Route path='/logout'>
-            <Logout />
+            {(!authToken) ? <Redirect to='/'/> : <Logout />}
         </Route>
         
         <Route path='/takesurvey/:id'>
