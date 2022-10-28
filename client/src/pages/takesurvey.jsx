@@ -5,10 +5,10 @@ import {  useParams } from "react-router-dom";
 import TakeSurveyQuestion from "../components/takesurveyquestion.jsx"
 
 const Container = styled(FormGroup)`
-    width:50%;
+    width:80%;
     margin:5% auto 0 auto;
     &>div{
-        margin-top:20px;
+        margin-top:1%;
     }
 `
 const defaultValue={
@@ -19,7 +19,6 @@ const defaultValue={
 
 
 const TakeSurvey=()=>{
-   
     const [survey, setSurvey] = useState(defaultValue);
     
     const {id} = useParams();
@@ -31,28 +30,27 @@ const TakeSurvey=()=>{
     const loadSurveyDetails =async()=>{
         const response = await getThisSurvey(id);
         setSurvey(response.data);
-       
     }
 
     const onValueChange=(e)=>{
         //console.log(e.target.name, e.target.value)
         setSurvey({...survey, [e.target.name]: e.target.value});
        // console.log(user);
-     }
+    }
 
 
     return(
         <Container>
-            <Typography variant="h4">Take Survey</Typography>
-            <FormControl>
-                <h5 >survey name: {survey.name}</h5>
-               
+            <div>
+                <div style={{textAlign:"center"}}>
+                <h2> {survey.name}</h2>
+                </div>
+            
                 
                 <TakeSurveyQuestion/>
-            </FormControl>
-      </Container>
+            </div>
+        </Container>
     )
-
 }
 
 export default TakeSurvey;

@@ -5,10 +5,9 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "build": "cd client && npm run build",
+    "build": "cd client && yarn build",
     "install-client": "cd client && yarn install",
-    "heroku-postbuild": "npm run install-client && npm run build",
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

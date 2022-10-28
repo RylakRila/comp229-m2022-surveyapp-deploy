@@ -7,10 +7,10 @@ import Card from 'react-bootstrap/Card';
 import {addResponses} from '../service/api'; 
 
 const Container = styled(FormGroup)`
-   width:100%;
+    width:100%;
     margin:5% auto 0 auto;
     &>div{
-        margin-top:20px;
+        margin:1%;
     }
 `
 const defaultValue={
@@ -72,13 +72,13 @@ const TakeSurveyQuestion=()=>{
            <form onSubmit={()=>addResponseDetails()}>
             {
                     questions.map((question, index)=>
-                        <Card key={index} bg="light">                          
+                        <Card key={index} bg="light" style={{margin:"1%"}}>                          
                                 <Card.Header >{question.statement}</Card.Header>
                                  <div>
                                     {
                                     question.optionIds.map((option, index)=>
                                     <div key={index} >
-                                        <div style={{marginLeft:20}} >
+                                        <div style={{marginLeft:"1%"}} >
                                         <input style={{margin:'1em'}} type="radio" name={option.questionId} value={option.optionValue} onChange={(e)=>{onValueChange(e)}} />
                                             {option.optionValue}
                                             
